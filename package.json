@@ -1,0 +1,21 @@
+{
+  "name": "seward-fast-internet",
+  "version": "1.0.0",
+  "description": "Static site for Seward Internet Initiative",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "metalsmith",
+    "node",
+    "webpack",
+    "ES6"
+  ],
+  "author": "Trevor Pierce",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "metalsmith": "^2.1.0",
+    "metalsmith-markdown": "^0.2.1"
+  }
+}
