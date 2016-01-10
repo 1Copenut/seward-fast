@@ -1,0 +1,11 @@
+<nav id="navigation" role="navigation">
+    <ul class="pagelist">
+        {{#each collections.pages }}
+            <li class="pagelist__item">
+                <h3 class="pagelist__itemName">
+                    <a href="{{ this.path }}">{{ this.title }}</a>
+                </h3>
+            </li>
+        {{/each }}
+    </ul>
+</nav>
