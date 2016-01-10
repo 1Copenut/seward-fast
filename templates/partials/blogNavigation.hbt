@@ -1,0 +1,11 @@
+<h2 id="blogHeading">Top Blog Posts</h2>
+<ul class="articleList">
+    {{#each pagination.files}}
+        <li class="articleList__item">
+            <h3 class="articleList__itemName">
+                <a href="{{ this.path }}">{{ this.title }}</a>
+            </h3>
+        </li>
+    {{/each}}
+</ul>
+

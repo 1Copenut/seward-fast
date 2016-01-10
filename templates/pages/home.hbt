@@ -4,6 +4,8 @@
         {{> navigation }}
 
         {{{ contents }}}
+
+        {{> blogNavigation }}
     </div>
 </body>
 {{> footer }}
