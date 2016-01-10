@@ -1,6 +1,7 @@
 var Metalsmith = require('metalsmith'),
     markdown = require('metalsmith-markdown'),
     templates = require('metalsmith-templates'),
+    permalinks = require('metalsmith-permalinks'),
     Handlebars = require('handlebars'),
     fs = require('fs');
 
@@ -16,6 +17,7 @@ Metalsmith(__dirname)
         'gfm': true,
         'tables': true
     }))
+    .use(permalinks())
     .use(templates('handlebars'))
     .destination('build')
     .build(function(err) {
