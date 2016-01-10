@@ -1,0 +1,6 @@
+{{> header }}
+<body>
+    <div id="wrapper">
+        {{{ contents }}}
+    </div>
+</body>
