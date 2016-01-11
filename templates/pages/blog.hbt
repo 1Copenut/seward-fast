@@ -1,10 +1,10 @@
 {{> header }}
 <body>
     <div id="wrapper">
-        {{> navigation }}
 
         {{{ contents }}}
 
+        {{> articleSlug }}
     </div>
 </body>
 {{> footer }}

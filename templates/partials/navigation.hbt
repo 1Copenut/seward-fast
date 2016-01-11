@@ -1,11 +1,16 @@
-<nav id="navigation" role="navigation">
-    <ul class="pagelist">
-        {{#each collections.pages }}
-            <li class="pagelist__item">
-                <h3 class="pagelist__itemName">
-                    <a href="{{ this.path }}">{{ this.title }}</a>
-                </h3>
-            </li>
-        {{/each }}
-    </ul>
-</nav>
+<h2 id="blogHeading">Global Navigation to Pages</h2>
+<ul class="articleList">
+    {{#each collections.pages}}
+        <li class="articleList__item">
+            <h3 class="articleList__itemName">
+                <a href="{{ this.path }}">{{ this.title }}</a>
+            </h3>
+        </li>
+    {{/each}}
+    <li class="articleList__item">
+        <h3 class="articleList__itemName">
+            <a href="articles/">Articles</a>
+        </h3>
+    </li>
+</ul>
+

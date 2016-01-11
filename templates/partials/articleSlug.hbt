@@ -3,7 +3,7 @@
     {{#each pagination.files}}
         <li class="articleList__item">
             <h3 class="articleList__itemName">
-                <a href="{{ this.path }}">{{ this.title }}</a>
+                <a href="/{{ this.path }}">{{ this.title }}</a>
             </h3>
         </li>
     {{/each}}
