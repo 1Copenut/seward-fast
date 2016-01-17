@@ -1,16 +1,25 @@
-<h2 id="blogHeading">Global Navigation to Pages</h2>
-<ul class="articleList">
-    {{#each collections.pages}}
+<h2 id="siteNav" class="hidden--accessible">Seward Fast Site Navigation</h2>
+
+<nav id="navigation" role="navigation" aria-labelledby="siteNav">
+    <ul class="articleList">
         <li class="articleList__item">
-            <h3 class="articleList__itemName">
-                <a href="{{ this.path }}">{{ this.title }}</a>
+            <h3 class="articleList__itenName">
+                <a href="/">Home</a>
             </h3>
         </li>
-    {{/each}}
-    <li class="articleList__item">
-        <h3 class="articleList__itemName">
-            <a href="articles/">Articles</a>
-        </h3>
-    </li>
-</ul>
 
+        {{#each collections.pages}}
+            <li class="articleList__item">
+                <h3 class="articleList__itemName">
+                    <a href="/{{ this.path }}">{{ this.title }}</a>
+                </h3>
+            </li>
+        {{/each}}
+
+        <li class="articleList__item">
+            <h3 class="articleList__itemName">
+                <a href="/articles">Articles</a>
+            </h3>
+        </li>
+    </ul>
+</nav>

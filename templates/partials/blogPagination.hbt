@@ -1,0 +1,12 @@
+{{#if this.pagination}}
+    <nav class="pagination">
+        {{#if this.pagination.previous}}
+            <a href="/{{this.pagination.previous.path}}">&lt; Prev</a>
+        {{/if}}
+
+        {{#if this.pagination.next}}
+            <a href="/{{this.pagination.next.path}}">Next &gt;</a>
+        {{/if}}
+    </nav>
+{{/if}}
+

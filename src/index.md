@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Seward County High Speed Fiber Internet Initative 
 description: This is something else entirely
 template: pages/home.hbt
 ---

@@ -1,5 +1,5 @@
 {{> header }}
-<body class="page--home">
+<body class="subpage--{{ shortTitle }}">
     <div id="wrapper">
         <h1 class="page__title">{{ title }}</h1>
         {{> navigation }}

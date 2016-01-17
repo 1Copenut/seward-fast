@@ -1,6 +1,7 @@
 {{> header }}
 <body>
     <div id="wrapper">
+        <h1 class="page__title">{{ title }}</h1>
         {{{ contents }}}
     </div>
 </body>
