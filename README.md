@@ -10,4 +10,6 @@ Seward County, Nebraska is working to bring high-speed fiber into every home and
 3. ``` node server ```
 4. ``` nodemon build ```
 
-These commands will clone the existing master branch, change to the working directory, start the server, and start the Nodemon automatic rebuild script. Nodemon is configured via the nodemon.json file, and will rebuild on any changes to *Javascript*, JSON, Markdown, or Handlebars files in the /src and /templates directories.
+These commands will clone the existing master branch, change to the working directory, start the server, and start the Nodemon automatic rebuild script. Nodemon is configured via the nodemon.json file, and will rebuild on any changes to **Javascript**, **JSON**, **Markdown**, or **Handlebars** files in the /src and /templates directories.
+
+This automatic rebuild script does not trigger for CSS or SCSS/Sass/Less changes. A separate watch task and LiveReload will be configured to handle those changes.
