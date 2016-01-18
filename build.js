@@ -40,7 +40,11 @@ Metalsmith(__dirname)
         'gfm': true,
         'tables': true
     }))
-    .use(permalinks())
+    .use(permalinks({
+        relative: false,
+        pattern: 'articles/:date/:title',
+        date: 'YYYY/MM/DD'
+    }))
     .use(templates('handlebars'))
     .destination('build')
     .build(function(err) {
