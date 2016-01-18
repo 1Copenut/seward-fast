@@ -1,11 +1,8 @@
 {{> header }}
-<body class="page--home">
+<body>
     <div id="wrapper">
         <h1 class="page__title">{{ title }}</h1>
-        {{> navigation }}
-
         {{{ contents }}}
-
     </div>
 </body>
 {{> footer }}
