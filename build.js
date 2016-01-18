@@ -7,13 +7,13 @@ var Metalsmith = require('metalsmith'),
     Handlebars = require('handlebars'),
     fs = require('fs');
 
-// Add Handlebars partials
+/* Add Handlebars partials */
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.hbt').toString());
 Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.hbt').toString());
 Handlebars.registerPartial('navigation', fs.readFileSync(__dirname + '/templates/partials/navigation.hbt').toString());
 Handlebars.registerPartial('blogPagination', fs.readFileSync(__dirname + '/templates/partials/blogPagination.hbt').toString());
 
-// Metalsmith build plugins
+/* Metalsmith build plugins */
 Metalsmith(__dirname)
     .source('src')
     .use(collections({
@@ -46,3 +46,4 @@ Metalsmith(__dirname)
     .build(function(err) {
         if (err) console.log(err);
     });
+

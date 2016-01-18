@@ -1,0 +1,15 @@
+{
+    "restartable": "rs",
+    "ignore": [
+        "build/",
+        "node_modules/"
+    ],
+    "watch": [
+        "src/",
+        "templates/"
+    ],
+    "env": {
+        "NODE_ENV": "development"
+    },
+    "ext": "js json md hbt"
+}
