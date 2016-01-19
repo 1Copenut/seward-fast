@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        {{#if description}}
+            <meta description="{{ description }}" />
+        {{/if}}
+
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Blog",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://seward-fast.com"
+                },
+                "headline": "Example article headline",
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://seward-fast.com/thumbnail1.jpg",
+                    "height": 800,
+                    "width": 800
+                },
+                "datePublished": "2016-01-15T08:00:00-6:00",
+                "author": {
+                    "@type": "Person",
+                    "name": "Trevor Pierce"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Continuum Design, LLC",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://seward-fast.com/logo.jpg",
+                        "width": 200,
+                        "height": 200
+                    }
+                },
+                "description": "A better description of post"
+            }
+        </script>
+        <title>{{ title }}</title>
+    </head>
