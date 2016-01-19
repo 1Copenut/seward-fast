@@ -3,6 +3,7 @@ var Metalsmith = require('metalsmith'),
     pagination = require('metalsmith-pagination'),
     markdown = require('metalsmith-markdown'),
     permalinks = require('metalsmith-permalinks'),
+    sass = require('metalsmith-sass'),
     templates = require('metalsmith-templates'),
     Handlebars = require('handlebars'),
     fs = require('fs');
@@ -16,7 +17,7 @@ Handlebars.registerPartial('blogPagination', fs.readFileSync(__dirname + '/templ
 
 /* Metalsmith build plugins */
 Metalsmith(__dirname)
-    .source('src')
+    .source('src/')
     .use(collections({
         articles: {
             pattern: 'articles/**/*.md',
@@ -47,7 +48,13 @@ Metalsmith(__dirname)
         date: 'YYYY/MM/DD'
     }))
     .use(templates('handlebars'))
-    .destination('build')
+    .destination('build/')
+    .use(sass({
+        outputDir: 'css/',
+        sourceMap: true,
+        sourceMapContents: true,
+        precision: 10
+    }))
     .build(function(err) {
         if (err) console.log(err);
     });
