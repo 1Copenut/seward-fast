@@ -46,7 +46,7 @@ Metalsmith(__dirname)
     }))
     .use(permalinks({
         relative: false,
-        pattern: 'articles/:date/:title',
+        pattern: 'articles/:permalinkDate/:title',
         date: 'YYYY/MM/DD'
     }))
     .use(templates('handlebars'))

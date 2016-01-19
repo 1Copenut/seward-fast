@@ -23,7 +23,10 @@
                     "height": {{ imageHeight }},
                     "width": {{ imageWidth }} 
                 },
-                "datePublished": "{{ moment date format }}",
+                "datePublished": "{{ moment datePublished format }}",
+                {{#if dateModified }}
+                "dateModified": "{{ moment dateModified format }}",
+                {{/if}}
                 "author": {
                     "@type": "Person",
                     "name": "Trevor Pierce",
