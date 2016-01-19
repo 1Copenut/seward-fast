@@ -17,6 +17,13 @@
                     "@id": "https://seward-fast.com"
                 },
                 "headline": "{{ title }}",
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "{{ imageUrl }}",
+                    "height": {{ imageHeight }},
+                    "width": {{ imageWidth }} 
+                },
+                "datePublished": "2016-01-15T08:00:00-6:00",
                 "author": {
                     "@type": "Person",
                     "name": "Trevor Pierce",
@@ -42,4 +49,3 @@
             }
         </script>
     </head>
-

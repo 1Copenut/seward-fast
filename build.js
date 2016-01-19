@@ -11,6 +11,7 @@ var Metalsmith = require('metalsmith'),
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.hbt').toString());
 Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.hbt').toString());
 Handlebars.registerPartial('navigation', fs.readFileSync(__dirname + '/templates/partials/navigation.hbt').toString());
+Handlebars.registerPartial('blogHeader', fs.readFileSync(__dirname + '/templates/partials/blogHeader.hbt').toString());
 Handlebars.registerPartial('blogPagination', fs.readFileSync(__dirname + '/templates/partials/blogPagination.hbt').toString());
 
 /* Metalsmith build plugins */
@@ -40,7 +41,11 @@ Metalsmith(__dirname)
         'gfm': true,
         'tables': true
     }))
-    .use(permalinks())
+    .use(permalinks({
+        relative: false,
+        pattern: 'articles/:date/:title',
+        date: 'YYYY/MM/DD'
+    }))
     .use(templates('handlebars'))
     .destination('build')
     .build(function(err) {
