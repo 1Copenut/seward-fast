@@ -3,8 +3,43 @@
     <head>
         <meta charset="UTF-8" />
         {{#if description}}
-            <meta description="{{ description }}" />
+        <meta description="{{ description }}" />
         {{/if}}
+
         <title>{{ title }}</title>
+
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Blog",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://seward-fast.com"
+                },
+                "headline": "{{ title }}",
+                "author": {
+                    "@type": "Person",
+                    "name": "Trevor Pierce",
+                    "url": "http://continuumdesign.net",
+                    "sameAs": [
+                        "https://facebook.com/continuumdesign",
+                        "https://instagram.com/1copenut",
+                        "https://twitter.com/1copenut",
+                        "https://dribbble.com/1copenut"
+                    ]
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Seward Internet Initiative, LLC",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://seward-fast.com/logo.jpg",
+                        "height": 200,
+                        "width": 200
+                    }
+                },
+                "description": "{{ description }}"
+            }
+        </script>
     </head>
 
