@@ -14,6 +14,9 @@ Handlebars.registerPartial('navigation', fs.readFileSync(__dirname + '/templates
 Handlebars.registerPartial('blogHeader', fs.readFileSync(__dirname + '/templates/partials/blogHeader.hbt').toString());
 Handlebars.registerPartial('blogPagination', fs.readFileSync(__dirname + '/templates/partials/blogPagination.hbt').toString());
 
+/* Add Handlebars helpers */
+Handlebars.registerHelper('moment', require('helper-moment'));
+
 /* Metalsmith build plugins */
 Metalsmith(__dirname)
     .source('src')

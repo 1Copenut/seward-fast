@@ -23,7 +23,7 @@
                     "height": {{ imageHeight }},
                     "width": {{ imageWidth }} 
                 },
-                "datePublished": "2016-01-15T08:00:00-6:00",
+                "datePublished": "{{ moment date format }}",
                 "author": {
                     "@type": "Person",
                     "name": "Trevor Pierce",
