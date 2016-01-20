@@ -6,9 +6,11 @@ var Metalsmith = require('metalsmith'),
     Handlebars = require('handlebars'),
     markdown = require('metalsmith-markdown'),
     pagination = require('metalsmith-pagination'),
+    path = require('path'),
     permalinks = require('metalsmith-permalinks'),
     sass = require('metalsmith-sass'),
-    templates = require('metalsmith-templates');
+    templates = require('metalsmith-templates'),
+    webpack = require('metalsmith-webpack');
 
 /* Add Handlebars partials */
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.hbt').toString());
@@ -61,6 +63,37 @@ Metalsmith(__dirname)
         sourceMap: true,
         sourceMapContents: true,
         precision: 10
+    }))
+    .use(webpack({
+        module: {
+            loaders: [
+                {
+                    loader: 'babel-loader',
+
+                    /* Skip any files outside src directory */
+                    include: [
+                        path.resolve(__dirname, 'src/js'),
+                    ],
+
+                    // Only run .js files through Babel
+                    test: /\.js$/,
+
+                    // Options to configure Babel with
+                    query: {
+                        plugins: ['transform-runtime'],
+                        presets: ['es2015']
+                    }
+                }
+            ]
+        },
+        entry: [
+            'babel-polyfill',
+            './src/js/index.js'
+        ],
+        output: {
+            path: path.resolve(__dirname, 'build/js'), 
+            filename: 'bundle.js'
+        }
     }))
     .build(function(err) {
         if (err) console.log(err);
