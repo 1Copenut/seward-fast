@@ -4,6 +4,7 @@ var Metalsmith = require('metalsmith'),
     excerpts = require('metalsmith-excerpts'),
     fs = require('fs'),
     Handlebars = require('handlebars'),
+    ignore = require('metalsmith-ignore'),
     markdown = require('metalsmith-markdown'),
     pagination = require('metalsmith-pagination'),
     path = require('path'),
@@ -95,6 +96,7 @@ Metalsmith(__dirname)
             filename: 'bundle.js'
         }
     }))
+    .use(ignore('js/*'))
     .build(function(err) {
         if (err) console.log(err);
     });
