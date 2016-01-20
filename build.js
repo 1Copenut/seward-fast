@@ -1,6 +1,7 @@
 var Metalsmith = require('metalsmith'),
     collections = require('metalsmith-collections'),
     drafts = require('metalsmith-drafts'),
+    excerpts = require('metalsmith-excerpts'),
     fs = require('fs'),
     Handlebars = require('handlebars'),
     markdown = require('metalsmith-markdown'),
@@ -52,6 +53,7 @@ Metalsmith(__dirname)
         pattern: 'articles/:permalinkDate/:title',
         date: 'YYYY/MM/DD'
     }))
+    .use(excerpts())
     .use(templates('handlebars'))
     .destination('build/')
     .use(sass({

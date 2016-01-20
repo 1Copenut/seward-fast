@@ -8,6 +8,7 @@
                     <h3 class="articleList__itemName">
                         <a href="/{{ this.path }}">{{ this.title }}</a>
                     </h3>
+                    <p class="articleList__itemExcerpt">{{ this.excerpt }}</p>
                 </li>
             {{/each}}
         </ul>
