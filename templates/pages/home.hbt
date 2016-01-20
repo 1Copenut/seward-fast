@@ -7,5 +7,4 @@
         {{{ contents }}}
 
     </div>
-</body>
 {{> footer }}

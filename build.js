@@ -6,9 +6,11 @@ var Metalsmith = require('metalsmith'),
     Handlebars = require('handlebars'),
     markdown = require('metalsmith-markdown'),
     pagination = require('metalsmith-pagination'),
+    path = require('path'),
     permalinks = require('metalsmith-permalinks'),
     sass = require('metalsmith-sass'),
-    templates = require('metalsmith-templates');
+    templates = require('metalsmith-templates'),
+    webpack = require('metalsmith-webpack');
 
 /* Add Handlebars partials */
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.hbt').toString());
@@ -61,6 +63,20 @@ Metalsmith(__dirname)
         sourceMap: true,
         sourceMapContents: true,
         precision: 10
+    }))
+    .use(webpack({
+        context: path.resolve(__dirname, './src/js/'),
+        entry: './index.js',
+        output: {
+            path: __dirname,
+            filename: 'bundle.js'
+        },
+        module: {
+            loaders: [{
+                test: /.js$/,
+                loader: 'babel-loader'
+            }]
+        }
     }))
     .build(function(err) {
         if (err) console.log(err);
