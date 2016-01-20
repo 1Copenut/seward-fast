@@ -1,12 +1,13 @@
 var Metalsmith = require('metalsmith'),
     collections = require('metalsmith-collections'),
-    pagination = require('metalsmith-pagination'),
+    drafts = require('metalsmith-drafts'),
+    fs = require('fs'),
+    Handlebars = require('handlebars'),
     markdown = require('metalsmith-markdown'),
+    pagination = require('metalsmith-pagination'),
     permalinks = require('metalsmith-permalinks'),
     sass = require('metalsmith-sass'),
-    templates = require('metalsmith-templates'),
-    Handlebars = require('handlebars'),
-    fs = require('fs');
+    templates = require('metalsmith-templates');
 
 /* Add Handlebars partials */
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.hbt').toString());
@@ -21,6 +22,7 @@ Handlebars.registerHelper('moment', require('helper-moment'));
 /* Metalsmith build plugins */
 Metalsmith(__dirname)
     .source('src/')
+    .use(drafts())
     .use(collections({
         articles: {
             pattern: 'articles/**/*.md',
