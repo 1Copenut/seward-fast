@@ -65,17 +65,34 @@ Metalsmith(__dirname)
         precision: 10
     }))
     .use(webpack({
-        context: path.resolve(__dirname, './src/js/'),
-        entry: './index.js',
-        output: {
-            path: __dirname,
-            filename: 'bundle.js'
-        },
         module: {
-            loaders: [{
-                test: /.js$/,
-                loader: 'babel-loader'
-            }]
+            loaders: [
+                {
+                    loader: 'babel-loader',
+
+                    /* Skip any files outside src directory */
+                    include: [
+                        path.resolve(__dirname, 'src/js'),
+                    ],
+
+                    // Only run .js files through Babel
+                    test: /\.js$/,
+
+                    // Options to configure Babel with
+                    query: {
+                        plugins: ['transform-runtime'],
+                        presets: ['es2015']
+                    }
+                }
+            ]
+        },
+        entry: [
+            'babel-polyfill',
+            './src/js/index.js'
+        ],
+        output: {
+            path: path.resolve(__dirname, 'build/js'), 
+            filename: 'bundle.js'
         }
     }))
     .build(function(err) {

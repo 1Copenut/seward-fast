@@ -1,3 +1,3 @@
-import utils from 'utility';
+import utils from './utility';
 
 console.log(utils.generateRandom());
