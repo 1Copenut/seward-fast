@@ -11,6 +11,7 @@ var Metalsmith = require('metalsmith'),
     permalinks = require('metalsmith-permalinks'),
     sass = require('metalsmith-sass'),
     templates = require('metalsmith-templates'),
+    uglify = require('metalsmith-uglify'),
     webpack = require('metalsmith-webpack');
 
 /* Add Handlebars partials */
@@ -97,6 +98,9 @@ Metalsmith(__dirname)
         }
     }))
     .use(ignore('js/*'))
+    .use(uglify({
+        sourceMap: true
+    }))
     .build(function(err) {
         if (err) console.log(err);
     });
