@@ -20,6 +20,7 @@ Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/par
 Handlebars.registerPartial('navigation', fs.readFileSync(__dirname + '/templates/partials/navigation.hbt').toString());
 Handlebars.registerPartial('blogHeader', fs.readFileSync(__dirname + '/templates/partials/blogHeader.hbt').toString());
 Handlebars.registerPartial('blogPagination', fs.readFileSync(__dirname + '/templates/partials/blogPagination.hbt').toString());
+Handlebars.registerPartial('blogSubfooter', fs.readFileSync(__dirname + '/templates/partials/blogSubfooter.hbt').toString());
 
 /* Add Handlebars helpers */
 Handlebars.registerHelper('moment', require('helper-moment'));

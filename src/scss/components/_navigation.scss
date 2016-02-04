@@ -1,0 +1,21 @@
+.site__navigation {
+    background-color: $light-green;
+
+    .site-list {
+        display: block;
+        text-align: center;
+    }
+
+    .site-list__item {
+        border: 1px solid rgba($light-gray, 0.25);
+        display: inline-block;
+        margin: 0.5rem 0;
+
+        a {
+            color: $light-gray;
+            display: block;
+            padding: 1rem 2rem;
+            text-decoration: none;
+        }
+    }
+}

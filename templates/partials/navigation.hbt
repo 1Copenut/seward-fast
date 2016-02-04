@@ -1,23 +1,23 @@
 <h2 id="siteNav" class="hidden--accessible">Seward Fast Site Navigation</h2>
 
-<nav id="navigation" role="navigation" aria-labelledby="siteNav">
-    <ul class="articleList">
-        <li class="articleList__item">
-            <h3 class="articleList__itenName">
+<nav id="navigation" class="site__navigation" role="navigation" aria-labelledby="siteNav">
+    <ul class="site-list">
+        <li class="site-list__item">
+            <h3 class="site-list__itenName">
                 <a href="/">Home</a>
             </h3>
         </li>
 
         {{#each collections.pages}}
-            <li class="articleList__item">
-                <h3 class="articleList__itemName">
+            <li class="site-list__item">
+                <h3 class="site-list__itemName">
                     <a href="/{{ this.path }}">{{ this.title }}</a>
                 </h3>
             </li>
         {{/each}}
 
-        <li class="articleList__item">
-            <h3 class="articleList__itemName">
+        <li class="site-list__item">
+            <h3 class="site-list__itemName">
                 <a href="/articles">Articles</a>
             </h3>
         </li>

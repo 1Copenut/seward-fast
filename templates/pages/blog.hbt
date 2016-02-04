@@ -1,7 +1,8 @@
 {{> header }}
 <body>
     <div id="wrapper">
-        <h2 id="blogHeading">Top Blog Posts</h2>
+        <h1 id="blogHeading" class="page__title">Top Blog Posts</h1>
+        {{> navigation }}
         <ul class="articleList">
             {{#each pagination.files}}
                 <li class="articleList__item">

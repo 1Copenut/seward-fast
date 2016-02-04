@@ -1,2 +1,10 @@
-@import 'color';
-@import 'layout';
+@import 'vendor/bourbon/bourbon';
+@import 'vendor/neat/neat';
+
+@import 'core/variables';
+@import 'core/utilities';
+@import 'core/typography';
+@import 'core/layout';
+
+@import 'components/header';
+@import 'components/navigation';
