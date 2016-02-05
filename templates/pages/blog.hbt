@@ -1,19 +1,27 @@
 {{> header }}
 <body>
     <div id="wrapper">
-        <h1 id="blogHeading" class="page__title">Top Blog Posts</h1>
+        <header id="banner" role="banner">
+            <h1 id="blogHeading" class="page__title">Top Blog Posts</h1>
+        </header>
+
         {{> navigation }}
-        <ul class="articleList">
-            {{#each pagination.files}}
-                <li class="articleList__item">
-                    <h3 class="articleList__itemName">
-                        <a href="/{{ this.path }}">{{ this.title }}</a>
-                    </h3>
-                    <p class="articleList__itemExcerpt">{{ this.excerpt }}</p>
-                </li>
-            {{/each}}
-        </ul>
+
+        <section id="main" role="main">
+            <article>
+                <ul class="articleList">
+                    {{#each pagination.files}}
+                        <li class="articleList__item">
+                            <h3 class="articleList__itemName">
+                                <a href="/{{ this.path }}">{{ this.title }}</a>
+                            </h3>
+                            <p class="articleList__itemExcerpt">{{ this.excerpt }}</p>
+                        </li>
+                    {{/each}}
+                </ul>
+            </article>
+        </section>
 
         {{> blogPagination }}
-    </div>
-{{> footer }}
+
+        {{> footer }}

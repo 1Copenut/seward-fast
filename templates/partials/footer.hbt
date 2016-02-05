@@ -1,3 +1,5 @@
+            <footer id="content-info" role="contentinfo">This is the footer</footer>
+        </div>
         <script type="text/javascript" src="/js/bundle.min.js"></script>
     </body>
 </html>

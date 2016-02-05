@@ -1,11 +1,11 @@
 {{#if this.pagination}}
-    <nav class="pagination">
+    <nav class="blog__pagination">
         {{#if this.pagination.previous}}
-            <a href="/{{this.pagination.previous.path}}">&lt; Prev</a>
+            <a href="/{{this.pagination.previous.path}}" title="Previous blog posts" class="blog__pagination-link">&lt; Previous Page</a>
         {{/if}}
 
         {{#if this.pagination.next}}
-            <a href="/{{this.pagination.next.path}}">Next &gt;</a>
+            <a href="/{{this.pagination.next.path}}" title="Next blog posts" class="blog__pagination-link">Next Page &gt;</a>
         {{/if}}
     </nav>
 {{/if}}

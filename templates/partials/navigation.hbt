@@ -1,7 +1,6 @@
-<h2 id="siteNav" class="hidden--accessible">Seward Fast Site Navigation</h2>
-
-<nav id="navigation" class="site__navigation" role="navigation" aria-labelledby="siteNav">
-    <ul class="site-list">
+<nav id="navigation" class="site__navigation" role="navigation">
+    <h2 id="siteNav" class="hidden--accessible">Seward Fast Site Navigation</h2>
+    <ul class="site-list" aria-labelledby="siteNav">
         <li class="site-list__item">
             <h3 class="site-list__itenName">
                 <a href="/">Home</a>

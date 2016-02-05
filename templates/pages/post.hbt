@@ -1,8 +1,12 @@
 {{> blogHeader }}
 <body>
     <div id="wrapper">
-        <h1 class="page__title">{{ title }}</h1>
-        {{{ contents }}}
+        <header id="banner" role="banner">
+            <h1 class="page__title">{{ title }}</h1>
+        </header>
+        
+        {{> main }}
+
         {{> blogSubfooter }}
-    </div>
-{{> footer }}
+
+        {{> footer }}

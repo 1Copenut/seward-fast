@@ -1,10 +1,12 @@
 {{> header }}
 <body class="subpage--{{ shortTitle }}">
     <div id="wrapper" class="layout--page">
-        <h1 class="page__title">{{ title }}</h1>
+        <header id="banner" role="banner">
+            <h1 class="page__title">{{ title }}</h1>
+        </header>
+
         {{> navigation }}
 
-        {{{ contents }}}
+        {{> main }}
 
-    </div>
-{{> footer }}
+        {{> footer }}
