@@ -1,8 +1,10 @@
 {{> blogHeader }}
-<body>
+<body class="subpage__article">
     <div id="wrapper">
         <header id="banner" role="banner">
-            <h1 class="page__title">{{ title }}</h1>
+            <h1 class="post__title">{{ title }}</h1>
+            <p class="post__byline">Published by <span> {{ author }}</span></p>
+            <p class="post__byline-date"><time datetime="{{ datePublished }}">{{ prettyDate }}</time></p>
         </header>
         
         {{> main }}

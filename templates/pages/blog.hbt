@@ -1,5 +1,5 @@
 {{> header }}
-<body>
+<body class="subpage__articles">
     <div id="wrapper">
         <header id="banner" role="banner">
             <h1 id="blogHeading" class="page__title">Top Blog Posts</h1>
