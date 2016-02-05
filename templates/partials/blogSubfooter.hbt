@@ -1,4 +1,10 @@
-<div class="post__subfooter">
-    <a href="/" title="Home" class="post__home-link">Return to the Seward Fast homepage</a>
-    <a href="/articles" title="Home" class="post__home-link">Return to the Seward Fast article list</a>
-</div>
+<nav class="post__subfooter">
+    <ul class="subfooter__list">
+        <li class="subfooter__list-item">
+            <a href="/" title="Home" class="post__home-link">Return to the Seward Fast homepage</a>
+        </li>
+        <li class="subfooter__list-item">
+            <a href="/articles" title="Home" class="post__home-link">Return to the Seward Fast article list</a>
+        </li>
+    </ul>
+</nav>
