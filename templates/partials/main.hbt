@@ -1,5 +1,3 @@
-<section id="main" role="main">
-    <article>
-        {{{ contents }}}
-    </article>
+<section>
+  {{{ contents }}}
 </section>

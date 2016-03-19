@@ -1,5 +1,50 @@
 #wrapper {
-    margin: 0 auto;
-    max-width: 1150px;
-    width: 90%;
+  @include outer-container(1200px);
+
+  header,
+  footer,
+  nav,
+  section {
+    @include span-columns(12);
+    margin: 0;
+  }
+  
+  article {
+    @include span-columns(8 of 12);
+    padding: 1rem 2rem 1rem 2rem;
+  }
+
+  aside {
+    @include span-columns(4 of 12);
+    padding: 1rem 2rem 1rem 0;
+  }
+  
+  // Basic media query for standard DPI displays
+  @media screen and (max-width: 600px) {
+    article,
+    aside {
+      @include span-columns(12);
+
+      padding: 1rem;
+    }
+  }
+
+  footer {
+    padding: 2rem;
+  }
+
+  // Retina media query for HiDPI devices
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 320px),
+  only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 320px),
+  only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 320px),
+  only screen and (        min-device-pixel-ratio: 2)      and (min-width: 320px),
+  only screen and (                min-resolution: 192dpi) and (min-width: 320px),
+  only screen and (                min-resolution: 2dppx)  and (min-width: 320px) { 
+    article {
+      @include span-columns(12);
+      padding: 1rem;
+    }
+  }
 }
+
